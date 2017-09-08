@@ -10,7 +10,13 @@ choco install virtualbox
 #Install git
 choco install git.install/GitAndUnixToolsOnPath /WindowsTerminal
 
-#Install Ansible VM
+#Create Ansible VM
 git clone https://github.com/davidobrien1985/vagrant_ansible.git
 cd vagrant_ansible
 Vagrant up
+
+#ssh ino new Ansible VM
+vagrant ssh ansible
+
+#Initialize Ansible
+source ansible/hacking/env-setup
