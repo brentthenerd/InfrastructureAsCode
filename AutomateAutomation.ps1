@@ -1,6 +1,9 @@
 #Install chocolatey https://chocolatey.org/install
 Set-ExecutionPolicy AllSigned; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+Install latest powershell and WMF (Windows Management Framework)
+choco install powershell -y
+
 #Install Vagrant https://chocolatey.org/packages/vagrant
 choco install vagrant -y
 
