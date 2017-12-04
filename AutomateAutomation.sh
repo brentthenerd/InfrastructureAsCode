@@ -29,3 +29,7 @@ brew install mas
 
 #Install OneDrive
 mas install 823766827
+
+#Install Docker
+brew cask install docker
+
