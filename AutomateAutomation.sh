@@ -37,3 +37,5 @@ brew install docker-completion
 brew install docker-compose-completion
 brew install docker-machine-completion
 sudo open /Applications/Docker.app/
+
+brew install ctags
