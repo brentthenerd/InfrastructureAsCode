@@ -7,6 +7,7 @@ docker
 
 #Install Docker Apps
 
-
 #Install PowerShell Modules
 
+#Install Visual Studio Code Extensions
+code --install-extension ms-python.python
