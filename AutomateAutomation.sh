@@ -24,6 +24,9 @@ brew cask install slack
 #Install iTerm2
 brew cask install iterm2
 
+#Install Tunnel Blick
+brew cask install tunnelblick
+
 #Install mas (Mac Apple Store CLI)
 brew install mas
 
