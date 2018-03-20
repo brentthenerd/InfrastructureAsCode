@@ -62,3 +62,6 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/L
 #Install and Enable Dark Mode
 brew install dark-mode
 dark-mode
+
+#Reduce Transparency
+defaults write com.apple.universalaccess reduceTransparency -bool
