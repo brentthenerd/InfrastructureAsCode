@@ -26,6 +26,7 @@ open /Applications/Slack.app
 #Install iTerm2
 brew cask install iterm2
 open /Applications/iTerm.app
+curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
 #Install Tunnel Blick
 brew cask install tunnelblick
