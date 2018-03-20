@@ -39,3 +39,5 @@ brew install docker-machine-completion
 sudo open /Applications/Docker.app/
 
 brew install ctags
+
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Solid Gray Dark.png"'
