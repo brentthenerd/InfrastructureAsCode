@@ -27,6 +27,9 @@ brew cask install iterm2
 #Install Tunnel Blick
 brew cask install tunnelblick
 
+#Install Filezilla
+brew cask install filezilla
+
 #Install mas (Mac Apple Store CLI)
 brew install mas
 
@@ -40,7 +43,10 @@ brew install docker-completion
 brew install docker-compose-completion
 brew install docker-machine-completion
 sudo open /Applications/Docker.app/
-
 brew install ctags
 
+#Change Theme to Dark
+sudo defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+
+#Change Wallpaper to Solid Gray
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Solid Gray Dark.png"'
