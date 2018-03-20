@@ -29,6 +29,8 @@ brew cask install tunnelblick
 
 #Install Filezilla
 brew cask install filezilla
+#Install BetterTouchTool
+brew cask install bettertouchtool
 
 #Install mas (Mac Apple Store CLI)
 brew install mas
