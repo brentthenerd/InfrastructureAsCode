@@ -9,6 +9,9 @@ brew update
 #Install Cask (Cask is now bundled with Homebrew
 #brew install cask
 
+#Install Ansible
+brew install ansible
+
 #Install Visual Studio Code
 brew cask install visual-studio-code
 open /Applications/Visual\ Studio\ Code.app/
