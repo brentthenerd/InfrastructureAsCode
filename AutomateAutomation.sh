@@ -12,6 +12,9 @@ brew update
 #Install Ansible
 brew install ansible
 
+#Install htop
+brew install htop
+
 #Install Visual Studio Code
 brew cask install visual-studio-code
 open /Applications/Visual\ Studio\ Code.app/
