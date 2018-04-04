@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#disable Gatekeeper
+sudo spctl --master-disable
+
 #Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -9,8 +12,17 @@ brew update
 #Install Cask (Cask is now bundled with Homebrew
 #brew install cask
 
+#Clone full brew repo
+git -C "$(brew --repo homebrew/core)" fetch --unshallow
+
 #Install Ansible
 brew install ansible
+
+#Install p7zip
+brew install p7zip
+
+#Install virtualbox
+brew install caskroom/cask/virtualboX
 
 #Install htop
 brew install htop
