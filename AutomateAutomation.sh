@@ -18,6 +18,12 @@ git -C "$(brew --repo homebrew/core)" fetch --unshallow
 #Install Ansible
 brew install ansible
 
+#Install Node
+brew install node
+
+#Install minikube
+brew cask install minikube
+
 #Install p7zip
 brew install p7zip
 
