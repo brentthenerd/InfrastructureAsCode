@@ -99,3 +99,6 @@ sudo -u $currentUser killall SystemUIServer
 #Suck Animation
 defaults write com.apple.dock mineffect suck; killall Dock
 
+#Clean up Dock (Only show Open Applications)
+defaults write com.apple.dock static-only -bool TRUE; killall Dock
+
