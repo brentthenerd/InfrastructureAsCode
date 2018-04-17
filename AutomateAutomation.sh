@@ -90,3 +90,10 @@ dark-mode
 
 #Reduce Transparency
 defaults write com.apple.universalaccess reduceTransparency -bool
+
+#Show battery percentage
+currentUser=`ls -l /dev/console | cut -d " " -f4`
+sudo -u $currentUser defaults write com.apple.menuextra.battery ShowPercent YES
+sudo -u $currentUser killall SystemUIServer
+
+
