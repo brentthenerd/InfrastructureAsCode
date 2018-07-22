@@ -1,7 +1,67 @@
 #!/bin/bash
+#
+# Set up OSX preferences
+#
+# Inspired by: https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+###########################################
+# CONFIG
+
+HOSTNAME="darwin"
+
+###########################################
+# MAIN
+
+echo "This script will set properties on OSX"
+
+echo " Ask for the administrator password for the duration of this script"
+sudo -v
+
+echo " Keep-alive: update existing sudo time stamp until .osx has finished"
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+echo " Set computer name to $HOSTNAME (as done via System Preferences → Sharing)"
+sudo scutil --set ComputerName $HOSTNAME
+sudo scutil --set HostName $HOSTNAME
+sudo scutil --set LocalHostName $HOSTNAME
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
+
+echo " Finder: show hidden files by default"
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+echo " Finder: show all filename extensions"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+echo " Finder: show status bar"
+defaults write com.apple.finder ShowStatusBar -bool true
+
+echo " Enable snap-to-grid for icons on the desktop and in other icon views"
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+echo " Use list view in all Finder windows by default"
+# Four-letter codes for the other view modes: icnv, clmv, Flwv"
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+echo " Disable the warning before emptying the Trash"
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+echo " Automatically hide and show the Dock"
+defaults write com.apple.dock autohide -bool true
 
 #disable Gatekeeper
 sudo spctl --master-disable
+
+#enable Tab in modal dialogs
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+#Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+echo " Expand print panel by default"
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+#Show IP address, hostname, OS version when clicking the clock in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 #Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
