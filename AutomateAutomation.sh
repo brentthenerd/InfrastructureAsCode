@@ -75,59 +75,33 @@ brew update
 #Clone full brew repo
 git -C "$(brew --repo homebrew/core)" fetch --unshallow
 
-#Install Ansible
 brew install ansible
-
-#Install Node
+brew install --cask google-chrome
 brew install node
-
-#Install minikube
 brew cask install minikube
-
-#Install p7zip
 brew install p7zip
-
-#Install virtualbox
 brew install caskroom/cask/virtualboX
-
-#Install htop
 brew install htop
-
-#Install Visual Studio Code
 brew cask install visual-studio-code
 open /Applications/Visual\ Studio\ Code.app/
-
-#Install Powershell
 brew cask install powershell
-
-#Install Chrome
-brew cask install google-chrome
-
-#Install Slack
 brew cask install slack
 open /Applications/Slack.app
-
-#Install iTerm2
 brew cask install iterm2
 open /Applications/iTerm.app
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
-
-#Install Tunnel Blick
 brew cask install tunnelblick
-
-#Install Filezilla
 brew cask install filezilla
-
-#Install BetterTouchTool
 brew cask install bettertouchtool
 open /Applications/BetterTouchTool.app
+brew install bitwarden
+brew install git
+
+#Install oh-man-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 #Install mas (Mac Apple Store CLI)
 brew install mas
-
-#Install OneDrive
-mas install 823766827
-open /Applications/OneDrive.app
 
 #Install Docker
 brew cask install docker
